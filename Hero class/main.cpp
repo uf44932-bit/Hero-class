@@ -16,55 +16,76 @@
  */
 
 #include <iostream>
+#include <ctime>
 #include <string>
 
 using namespace std;
 
 class Hero {
 private:
-    int Strength;
-    int Courage;
     string Name;
-    string Name2;
-    string Name3;
+    int Strength;
     
-
-
-
+    
 public:
+
+    int Courage;
+
     
     Hero (string Heroname) {
         Name = Heroname;
         
         
-        Strength = rand() % 100 + 1;
-        Courage = rand() % 100 + 1;
-        
-    
+        Strength = rand() % 100;
+        Courage = rand() % 100;
+
         
         
     }
     
-    string getName () {
+    string getName() const {
         return Name;
     }
     
-    int setStrength () {
+    int getStrength() const {
         return Strength;
     }
+       
+   
+    int getCourage() const {
+            return Courage;
+        }
+    void setCourage(int newCourage) {
+        Courage = newCourage;
+    }
     
-    int getCourage () {
-        return Courage;
+
+        
+};
+    
+    void AttendTheapry()
+    {
+        
+    }
+    
+    void AttendTraining()
+    {
+        
     }
     
     
-};
+  
+    
+   
+    
+
 
 int main() {
     
     double time = 0.0;
     
-    srand(time /0.5);
+    
+    
     
     
     
