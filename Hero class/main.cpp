@@ -30,6 +30,7 @@ private:
 public:
 
     int Courage;
+    
 
     
     Hero (string Heroname) {
@@ -59,18 +60,23 @@ public:
         Courage = newCourage;
     }
     
+    void AttendTheapry();
+    void AttendTraining();
+    
+    
 
         
 };
     
-    void AttendTheapry()
+    void Hero::AttendTheapry()
     {
+        int CourageGain = (rand() % 10);
+        Courage += CourageGain;
         
     }
     
-    void AttendTraining()
-    {
-        
+    void Hero::AttendTraining()
+{
     }
     
     
@@ -82,7 +88,6 @@ public:
 
 int main() {
     
-    double time = 0.0;
     
     
     
