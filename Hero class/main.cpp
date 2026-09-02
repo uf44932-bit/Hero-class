@@ -22,22 +22,40 @@ using namespace std;
 
 class Hero {
 private:
-
-    double Strength;
+    int Strength;
+    int Courage;
     string Name;
+    string Name2;
+    string Name3;
     
-    
+
+
+
 public:
     
-    double Courage;
+    Hero (string Heroname) {
+        Name = Heroname;
+        
+        
+        Strength = rand() % 100 + 1;
+        Courage = rand() % 100 + 1;
+        
     
-    Hero (string name) {
-        name = name;
+        
+        
     }
     
-    double strength = rand();
-    double courage = rand();
-
+    string getName () {
+        return Name;
+    }
+    
+    int setStrength () {
+        return Strength;
+    }
+    
+    int getCourage () {
+        return Courage;
+    }
     
     
 };
@@ -47,6 +65,8 @@ int main() {
     double time = 0.0;
     
     srand(time /0.5);
+    
+    
     
     
     
