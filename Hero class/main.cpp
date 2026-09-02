@@ -1,13 +1,4 @@
 /*
- A hero has (variables for):
- -A strength value, that is assigned randomly when they are created. Code outside the class should be able to read this value, but not write to it.
- -A courage value, that is assigned randomly when they are created. Code outside the class should be able to read or write this value.
- -A name, that is set by the constructor. Code outside the class should be able to read this value, but not write to it.
-
- A hero can (has functions to):
- -Attend training for some length of time (the argument), which increases their strength proportionally to the time.
- -Attend therapy, which increases their courage by a random amount.
- These functions should be accessible outside the class.
 
  There should be an external (not in the class) function which sends a hero on a quest:
  -The quest should end in success, failure, or a neutral result. A better outcome should be more likely for heroes with higher strength.
@@ -17,6 +8,7 @@
 
 #include <iostream>
 #include <ctime>
+#include <cstdlib>
 #include <string>
 
 using namespace std;
@@ -39,10 +31,9 @@ public:
         
         Strength = rand() % 100;
         Courage = rand() % 100;
-
-        
         
     }
+    
     
     string getName() const {
         return Name;
@@ -60,24 +51,26 @@ public:
         Courage = newCourage;
     }
     
-    void AttendTheapry();
-    void AttendTraining();
-    
-    
+    void AttendTheapry() {
+        int CourageGain = (rand() % 5) +1;
+        Courage += CourageGain;
+        cout << Name << "Courage Gained! Courage is now " << CourageGain << endl;
+    }
+    void AttendTraining(int time) {
+        Strength += time * 2;
+        cout << Name << "Trained For" << time << "hours. Strength is now" << Strength << endl;
+        
+    }
 
         
 };
+
+void SendOnAQuest(Hero& hero) {
     
-    void Hero::AttendTheapry()
-    {
-        int CourageGain = (rand() % 10);
-        Courage += CourageGain;
-        
-    }
-    
-    void Hero::AttendTraining()
-{
-    }
+};
+
+
+
     
     
   
@@ -89,7 +82,7 @@ public:
 int main() {
     
     
-    
+   
     
     
     
