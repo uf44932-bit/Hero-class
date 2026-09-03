@@ -54,11 +54,11 @@ public:
     void AttendTheapry() {
         int CourageGain = (rand() % 5) +1;
         Courage += CourageGain;
-        cout << Name << "Courage Gained! Courage is now " << CourageGain << "\n";
+        cout << Name << " Gained Courage! Courage is now " << CourageGain << "\n";
     }
     void AttendTraining(int time) {
         Strength += time * 2;
-        cout << Name << "Trained For" << time << "hours. Strength is now" << Strength << "\n";
+        cout << Name << " Trained For " << time << " hours. Strength is now " << Strength << "\n";
         
     }
 
@@ -88,7 +88,7 @@ void SendOnAQuest(Hero& hero) {
     int currentCourage = hero.getCourage();
     hero.setCourage(currentCourage - Courageloss);
     
-    cout << "Quest: " << hero.getName() << "goes on a quest" << outcome << "lost" << Courageloss << "courage. courage is now" << currentCourage << "\n";
+    cout << "Quest: " << hero.getName() << " goes on a quest " << outcome << " lost " << Courageloss << " courage. courage is now " << currentCourage << "\n";
         
 };
 
@@ -97,8 +97,34 @@ void SendOnAQuest(Hero& hero) {
 
 int main() {
     
+    Hero hero1("Amy: ");
+    Hero hero2("joan: ");
+    Hero hero3("robert: ");
     
-   
+    cout << hero1.getName() << " Strength = " << hero1.getStrength() << " courage = " << hero1.getCourage() << "\n\n";
+    cout << hero2.getName() << "Strength = " <<hero2.getStrength() << " Courage = " << hero2.getCourage() << "\n\n";
+    cout << hero3.getName() << "Strength = " << hero3.getStrength() << " Courage = " << hero3.getCourage() <<"\n\n";
+    
+    hero1.AttendTheapry();
+    hero1.AttendTraining(2);
+    cout << "\n\n";
+    
+    hero2.AttendTheapry();
+    hero2.AttendTheapry();
+    cout << "\n\n";
+    
+    hero3.AttendTraining(3);
+    hero3.AttendTraining(3);
+    
+    cout <<"\n\n";
+    
+    SendOnAQuest(hero1);
+    cout << "\n\n";
+    SendOnAQuest(hero2);
+    cout << "\n\n";
+    SendOnAQuest(hero3);
+    
+    cout << "\n\n";
     
     
     
