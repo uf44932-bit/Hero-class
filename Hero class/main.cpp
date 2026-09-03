@@ -54,11 +54,11 @@ public:
     void AttendTheapry() {
         int CourageGain = (rand() % 5) +1;
         Courage += CourageGain;
-        cout << Name << "Courage Gained! Courage is now " << CourageGain << endl;
+        cout << Name << "Courage Gained! Courage is now " << CourageGain << "\n";
     }
     void AttendTraining(int time) {
         Strength += time * 2;
-        cout << Name << "Trained For" << time << "hours. Strength is now" << Strength << endl;
+        cout << Name << "Trained For" << time << "hours. Strength is now" << Strength << "\n";
         
     }
 
@@ -67,15 +67,31 @@ public:
 
 void SendOnAQuest(Hero& hero) {
     
+    int sucessRoll = (rand() % 10) + hero.getStrength();
+    
+    string outcome;
+    int Courageloss = 0;
+    
+    if(sucessRoll >= 15)
+    {
+        outcome = "Sucess";
+        Courageloss = 2;
+        
+    } else if (sucessRoll >= 8){
+        outcome = "okay";
+        Courageloss = 5;
+    } else {
+        outcome = "Failure";
+        Courageloss = 10;
+    }
+    
+    int currentCourage = hero.getCourage();
+    hero.setCourage(currentCourage - Courageloss);
+    
+    cout << "Quest: " << hero.getName() << "goes on a quest" << outcome << "lost" << Courageloss << "courage. courage is now" << currentCourage << "\n";
+        
 };
 
-
-
-    
-    
-  
-    
-   
     
 
 
