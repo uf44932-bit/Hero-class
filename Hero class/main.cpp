@@ -51,7 +51,7 @@ public:
         Courage = newCourage;
     }
     
-    void AttendTheapry() {
+    void AttendTherapy() {
         int CourageGain = (rand() % 5) +1;
         Courage += CourageGain;
         cout << Name << " Gained Courage! Courage is now " << CourageGain << "\n";
@@ -78,7 +78,7 @@ void SendOnAQuest(Hero& hero) {
         Courageloss = 2;
         
     } else if (sucessRoll >= 8){
-        outcome = "okay";
+        outcome = "Good";
         Courageloss = 5;
     } else {
         outcome = "Failure";
@@ -97,6 +97,7 @@ void SendOnAQuest(Hero& hero) {
 
 int main() {
     
+    srand(time_t(0));
     Hero hero1("Amy: ");
     Hero hero2("joan: ");
     Hero hero3("robert: ");
@@ -105,12 +106,12 @@ int main() {
     cout << hero2.getName() << "Strength = " <<hero2.getStrength() << " Courage = " << hero2.getCourage() << "\n\n";
     cout << hero3.getName() << "Strength = " << hero3.getStrength() << " Courage = " << hero3.getCourage() <<"\n\n";
     
-    hero1.AttendTheapry();
+    hero1.AttendTherapy();
     hero1.AttendTraining(2);
     cout << "\n\n";
     
-    hero2.AttendTheapry();
-    hero2.AttendTheapry();
+    hero2.AttendTherapy();
+    hero2.AttendTherapy();
     cout << "\n\n";
     
     hero3.AttendTraining(3);
