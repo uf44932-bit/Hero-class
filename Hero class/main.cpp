@@ -1,10 +1,3 @@
-/*
-
- There should be an external (not in the class) function which sends a hero on a quest:
- -The quest should end in success, failure, or a neutral result. A better outcome should be more likely for heroes with higher strength.
- -The quest should reduce the hero's courage, with them losing more for worse outcomes.
- -The quest should print the hero's name and the result to the terminal.
- */
 
 #include <iostream>
 #include <ctime>
